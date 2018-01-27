@@ -1,0 +1,112 @@
+ext {
+    androidToolsVersion = "27.0.1"
+    compileWithSDK = 27
+    minimalSDK = 15
+    targetedSDK = 27
+
+    daggerVersion = '2.13'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    di = [
+            dagger                 : "com.google.dagger:dagger:${daggerVersion}",
+            daggerCompiler         : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerSupport          : "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerAndroidProcessor : "com.google.dagger:dagger-android-processor:$daggerVersion",
+            javaxAnnotation        : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject            : "javax.inject:javax.inject:${javaxInjectVersion}",
+    ]
+
+    kotlin_version = '1.2.21'
+    kotlin = [
+            stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    ]
+
+    rxAndroidVersion = '2.0.1'
+    rxJava2Version = '2.1.8'
+    rx = [
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            rxJava2  : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
+    ]
+
+    rxbindingVersion = '2.0.0'
+    rxbinding = [
+            base: "com.jakewharton.rxbinding2:rxbinding:${rxbindingVersion}",
+            support: "com.jakewharton.rxbinding2:rxbinding-support-v4:${rxbindingVersion}",
+            appCompat: "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${rxbindingVersion}",
+            design: "com.jakewharton.rxbinding2:rxbinding-design:${rxbindingVersion}",
+            recyclerView: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${rxbindingVersion}"
+    ]
+
+    multiDexVersion = '1.0.1'
+    appCompatVersion = '25.3.1'
+    androidTools = [
+            multidex    : "com.android.support:multidex:$multiDexVersion",
+            appCompat   : "com.android.support:appcompat-v7:$appCompatVersion",
+            design      : "com.android.support:design:$appCompatVersion",
+            recyclerview: "com.android.support:recyclerview-v7:$appCompatVersion",
+            cardView    : "com.android.support:cardview-v7:$appCompatVersion"
+    ]
+
+    playServicesVersion = '10.2.4'
+    googlePlay = [
+            location : "com.google.android.gms:play-services-location:$playServicesVersion",
+            maps     : "com.google.android.gms:play-services-maps:$playServicesVersion",
+            analytics: "com.google.android.gms:play-services-analytics:$playServicesVersion",
+            plus     : "com.google.android.gms:play-services-plus:$playServicesVersion",
+            firebase : "com.google.firebase:firebase-core:$playServicesVersion"
+    ]
+
+    okHttpVersion = '3.7.0'
+    networking = [
+            okhttp              : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okttpUrlConnection  : "com.squareup.okhttp3:okhttp-urlconnection:${okHttpVersion}",
+            okhttpLogInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+    ]
+
+    butterKnifeVersion = '8.8.1'
+    timberVersion = '3.1.0'
+    picassoVersion = '2.5.2'
+    utilities = [
+            butterKnife           : "com.jakewharton:butterknife:$butterKnifeVersion",
+            butterKnifeCompiler   : "com.jakewharton:butterknife-compiler:$butterKnifeVersion",
+            timber                : "com.jakewharton.timber:timber:$timberVersion",
+            picasso               : "com.squareup.picasso:picasso:$picassoVersion",
+    ]
+
+    // Testing
+    jUnitVersion = '4.12'
+    mockitoKotlinVersion = '1.5.0'
+    unitTesting = [
+            junit        : "junit:junit:$jUnitVersion",
+            mockitoKotlin: "com.nhaarman:mockito-kotlin-kt1.1:${mockitoKotlinVersion}",
+    ]
+
+    testRunnerVersion = '1.0.0'
+    espressoVersion = '3.0.0'
+    uiTesting = [
+            junit          : "junit:junit:$jUnitVersion",
+            annotations    : "com.android.support:support-annotations:$appCompatVersion",
+            runner         : "com.android.support.test:runner:$testRunnerVersion",
+            rules          : "com.android.support.test:rules:$testRunnerVersion",
+            espressoCore   : "com.android.support.test.espresso:espresso-core:$espressoVersion",
+            cucumberAndroid: 'info.cukes:cucumber-android:1.2.2'
+    ]
+
+    androidToolsPluginVersion = '3.0.1'
+    staticAnalysisPluginVersion = '0.4'
+    buildPropertiesPluginVersion = '0.2'
+    sonarPluginVersion = '2.0.1'
+    googleServicesPluginVersion = '3.1.0'
+    detektVersion = '1.0.0.RC4-3'
+    gradlePlugins = [
+            androidTools   : "com.android.tools.build:gradle:$androidToolsPluginVersion",
+            staticAnalysis : "com.novoda:gradle-static-analysis-plugin:$staticAnalysisPluginVersion",
+            buildProperties: "com.novoda:gradle-build-properties-plugin:$buildPropertiesPluginVersion",
+            sonarqube      : "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$sonarPluginVersion",
+            googleServices : "com.google.gms:google-services:$googleServicesPluginVersion",
+            butterKnife    : "com.jakewharton:butterknife-gradle-plugin:$butterKnifeVersion",
+            detekt         : "gradle.plugin.io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion"
+    ]
+}
+
+apply from: "$rootDir/kotlin-version.gradle"

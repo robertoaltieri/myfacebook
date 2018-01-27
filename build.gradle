@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+    }
+
+    apply from: 'dependency-versions.gradle'
+    apply from: 'kotlin-version.gradle'
+
+    dependencies {
+        classpath gradlePlugins.androidTools
+        classpath gradlePlugins.staticAnalysis
+        classpath gradlePlugins.detekt
+        classpath gradlePlugins.buildProperties
+        classpath gradlePlugins.sonarqube
+        classpath kotlin.gradlePlugin
+        classpath fileTree(dir: 'libs', include: [])
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+        google()
+    }
+}

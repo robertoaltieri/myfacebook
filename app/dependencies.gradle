@@ -1,0 +1,53 @@
+apply from: "$rootDir/dependency-versions.gradle"
+
+dependencies {
+    implementation di.dagger
+    implementation di.daggerSupport
+    kapt di.daggerCompiler
+    kapt di.daggerAndroidProcessor
+
+    implementation androidTools.multidex
+    implementation androidTools.appCompat
+    implementation androidTools.design
+    implementation androidTools.recyclerview
+    implementation androidTools.cardView
+
+    implementation googlePlay.location
+    implementation googlePlay.plus
+    implementation googlePlay.firebase
+
+    implementation utilities.butterKnife
+    kapt utilities.butterKnifeCompiler
+    implementation utilities.timber
+    implementation utilities.picasso
+
+    implementation rx.rxAndroid
+    implementation rx.rxJava2
+    implementation rxbinding.base
+    implementation rxbinding.support
+    implementation rxbinding.appCompat
+
+    implementation networking.okttpUrlConnection
+    implementation networking.okhttp
+
+    implementation kotlin.stdlib
+
+    implementation utilities.picasso
+
+    testImplementation unitTesting.junit
+    testImplementation unitTesting.mockitoKotlin
+
+    androidTestImplementation uiTesting.junit
+    androidTestImplementation uiTesting.annotations
+    androidTestImplementation (uiTesting.runner, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation (uiTesting.rules, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation(uiTesting.espressoCore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestImplementation uiTesting.cucumberAndroid
+
+}
